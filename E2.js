@@ -3,15 +3,15 @@ let value = prompt('Ведите число');
 value = +value;
 
 if(!value){
-  console.log('Упс, кажется вы ошиблись')
+  console.log('Упс, кажется вы ошиблись');
 } else if (typeof(value) === 'number'){
-  let text = (value % 2 === 0)? 'Число чётное': 'Число нечётное'
-  console.log(text)
+  let text = (value % 2 === 0)? 'Число чётное': 'Число нечётное';
+  console.log(text);
 }
 
 // Задание 2
 let x;
-x = {}
+x = {};
 
 switch(typeof(x)){
   case 'number':
@@ -24,12 +24,19 @@ switch(typeof(x)){
     console.log(x + ' - булево значение');
     break;
   default:
-    console.log("Тип " + x + ' не определен')
+    console.log("Тип " + x + ' не определен');
 }
 
 // Задание 3
 let string = 'string'
-console.log(string.split('').reverse().join(''))
+console.log(string.split('').reverse().join(''));
 
 // Задание 4
 let randomNumb = Math.round(Math.random()*100);
+
+// Задание 5
+let arr = ['utc', 'hj', 'co'];
+console.log(arr.length);
+arr.map(function(item, index, array){
+  return console.log(item)
+});
