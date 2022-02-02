@@ -20,6 +20,37 @@
 <div class="content">
     <h3> Мои контакты</h3>
 </div>
-
+<button onclick="console.log('Меня нажали! HTML')">Нажми меня</button>
+<button onclick="clickMe()">Нажми меня тоже) </button>
+<button id='btn'>И меня нажмите</button>
+<button id='btnlast'>Последний жмяк!!</button><hr>
+<button id='btnMany'>Нажми на кнопку и получишь результат</button>
+<script>
+	function clickMe (){
+	console.log('Меня нажали из скрипта')
+	};
+	// через id
+	btn.onclick = clickMe;
+	btnlast.onclick = function (){
+	alert('Oops');
+	};
+	// убрать обработчик
+	btnlast.onclick = null
+	
+	function oops(event){
+	// event передается автоматом, если используешь addEventListener
+		alert('Ohoho');
+		console.log(event.target);
+		event.stopPropagation(); // остановить всплытие события
+		};
+	// много обработчиков на одинаковые события
+	btnMany.onclick = () => console.log('Сначала сработаю я');
+	btnMany.addEventListener('click', oops);
+	btnMany.addEventListener('click', clickMe);
+	// удалить обработчик
+	btnMany.removeEventListener('click', oops);
+	
+	
+</script>
 </body>
 </html>
